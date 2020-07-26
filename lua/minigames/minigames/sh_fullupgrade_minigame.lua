@@ -19,21 +19,30 @@ else
 end
 
 if SERVER then
-  local t_roles = {ROLE_GLUTTON, ROLE_VAMPIRE, ROLE_HITMAN, ROLE_EXECUTIONER, ROLE_MESMERIST}
-  local i_roles = {ROLE_SURVIVALIST, ROLE_SPECTRE, ROLE_PHARAOH, ROLE_WRATH, ROLE_SHINIGAMI, ROLE_CLAIRVOYANT}
+  function TraitorRoles()
+    local roleData = roles.GetByIndex(ROLE_TRAITOR)
+
+    return roleData:GetSubRoles()
+  end
+
+  function InnocentRoles()
+    local roleData = roles.GetByIndex(ROLE_INNOCENT)
+
+    return roleData:GetSubRoles()
+  end
 
   function MINIGAME:OnActivation()
     local isUpgraded
     for _, ply in ipairs(player.GetAll()) do
       isUpgraded = false
       if ply:GetSubRole() == ROLE_INNOCENT then
-        for k, rl in RandomPairs(i_roles) do
+        for k, rl in RandomPairs(InnocentRoles()) do
           if isUpgraded then continue end
           ply:SetRole(rl)
           isUpgraded = true
         end
       elseif ply:GetSubRole() == ROLE_TRAITOR then
-        for k, rl in RandomPairs(t_roles) do
+        for k, rl in RandomPairs(TraitorRoles()) do
           if isUpgraded then continue end
           ply:SetRole(rl)
           isUpgraded = true
