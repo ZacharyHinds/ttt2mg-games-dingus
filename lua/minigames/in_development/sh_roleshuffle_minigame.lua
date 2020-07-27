@@ -45,7 +45,7 @@ if SERVER then
       end
     end
 
-    ply_first:SetSubRole(ply_x:GetSubRole(), ply_x:GetTeam())
+    ply_first:SetRole(ply_x:GetSubRole(), ply_x:GetTeam())
 
     SendFullStateUpdate()
   end

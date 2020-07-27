@@ -40,16 +40,17 @@ if SERVER then
           if isUpgraded then continue end
           ply:SetRole(rl)
           isUpgraded = true
+          SendFullStateUpdate()
         end
       elseif ply:GetSubRole() == ROLE_TRAITOR then
         for k, rl in RandomPairs(TraitorRoles()) do
           if isUpgraded then continue end
           ply:SetRole(rl)
           isUpgraded = true
+          SendFullStateUpdate()
         end
       end
     end
-    SendFullStateUpdate()
   end
 
   function MINIGAME:OnDeactivation()

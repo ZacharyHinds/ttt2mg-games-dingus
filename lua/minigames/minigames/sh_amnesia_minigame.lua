@@ -52,7 +52,7 @@ if SERVER then
         isSet2 = true
       elseif not isSet3 then
         ply:SetRole(ROLE_SERIALKILLER, TEAM_SERIALKILLER)
-        isSet2 = true
+        isSet3 = true
       else
         ply:SetRole(ROLE_AMNESIAC, TEAM_NONE)
       end
