@@ -40,15 +40,15 @@ if SERVER then
           if isUpgraded then continue end
           ply:SetRole(rl)
           isUpgraded = true
-          SendFullStateUpdate()
         end
+        SendFullStateUpdate()
       elseif ply:GetSubRole() == ROLE_TRAITOR then
         for k, rl in RandomPairs(TraitorRoles()) do
           if isUpgraded then continue end
           ply:SetRole(rl)
           isUpgraded = true
-          SendFullStateUpdate()
         end
+        SendFullStateUpdate()
       end
     end
   end
