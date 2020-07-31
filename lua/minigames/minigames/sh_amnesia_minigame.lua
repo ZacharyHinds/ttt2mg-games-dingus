@@ -46,6 +46,9 @@ if SERVER then
 
       if not isSet1 then
         ply:SetRole(ROLE_DETECTIVE, TEAM_INNOCENT)
+        ply:SetMaxHealth(ttt2_minigames_amnesia_dethealth:GetInt())
+        ply:SetHealth(ttt2_minigames_amnesia_dethealth:GetInt())
+        ply:GiveArmor(ttt2_minigames_amnesia_detarmor:GetInt())
         isSet1 = true
       elseif not isSet2 then
         ply:SetRole(ROLE_TRAITOR, TEAM_TRAITOR)

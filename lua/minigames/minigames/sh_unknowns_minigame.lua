@@ -48,6 +48,7 @@ if SERVER then
         ply:SetDefaultCredits()
         ply:SetMaxHealth(ttt2_minigames_unknowns_dethealth:GetInt())
         ply:SetHealth(ttt2_minigames_unknowns_dethealth:GetInt())
+        ply:GiveArmor(ttt2_minigames_unknowns_detarmor:GetInt())
         isSet1 = true
       elseif not isSet2 then
         ply:SetRole(ROLE_TRAITOR, TEAM_TRAITOR)
