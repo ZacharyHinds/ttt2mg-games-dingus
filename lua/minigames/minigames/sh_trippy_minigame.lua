@@ -65,7 +65,6 @@ if CLIENT then
 
   function MINIGAME:OnDeactivation()
     hook.Remove("RenderScreenspaceEffects", "TrippyMinigameEffect")
-
   end
 
 end
