@@ -25,7 +25,6 @@ if CLIENT then
   }
 else
   ttt2_minigames_onice_friction = CreateConVar("ttt2_minigames_onice_friction", "0.5", {FCVAR_ARCHIVE}, "Friction multiplier")
-
 end
 
 if SERVER then
