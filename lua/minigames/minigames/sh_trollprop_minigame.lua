@@ -25,7 +25,7 @@ if CLIENT then
     }
   }
 else
-  ttt2_minigames_trollprop_multiplier = CreateConVar("ttt2_minigames_trollprop_multiplier")
+  ttt2_minigames_trollprop_multiplier = CreateConVar("ttt2_minigames_trollprop_multiplier", 2.0, {FCVAR_ARCHIVE}, "Prop power multiplier")
 end
 
 if SERVER then

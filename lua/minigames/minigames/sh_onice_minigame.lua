@@ -6,11 +6,12 @@ MINIGAME.author = "Wasted"
 MINIGAME.contact = "Zzzaaaccc13 on TTT2 Discord"
 
 MINIGAME.conVarData = {
-  ttt2_minigames_roleshuffle_timer = {
+  ttt2_minigames_onice_friction = {
     slider = true,
-    min = 1,
-    max = 240,
-    desc = "(Def. 90)"
+    min = -1,
+    max = 8,
+    decimal = 1,
+    desc = "(Def. 0.1)"
   }
 }
 
@@ -24,22 +25,15 @@ if CLIENT then
     }
   }
 else
-  ttt2_minigames_onice_friction = CreateConVar("ttt2_minigames_onice_friction", "0.5", {FCVAR_ARCHIVE}, "Friction multiplier")
+  ttt2_minigames_onice_friction = CreateConVar("ttt2_minigames_onice_friction", "0.0", {FCVAR_ARCHIVE}, "Friction amount")
 end
 
 if SERVER then
   function MINIGAME:OnActivation()
-    for _, ply in ipairs(player.GetAll()) do
-      if not ply:Alive() or ply:IsSpec() then continue end
-
-      ply:SetFriction(ply:GetFriction() * ttt2_minigames_onice_friction:GetFloat())
+    RunConsoleCommand("sv_friction", ttt2_minigames_onice_friction:GetFloat())
   end
 
   function MINIGAME:OnDeactivation()
-    for _, ply in ipairs(player.GetAll()) do
-      ply:SetFriction(1)
-    end
+    RunConsoleCommand("sv_friction", 8)
   end
-end
-if CLIENT then
 end

@@ -45,11 +45,7 @@ if CLIENT then
   }
 
   function MINIGAME:OnActivation()
-<<<<<<< HEAD
     hook.Add("RenderScreenspaceEffects", "TrippyMinigameEffect", function()
-=======
-    hook.Add("RenderScreenspaceEffects", "GrayscaleMinigameEffect", function()
->>>>>>> 0faf5cba7001e7bbff0bcb1d8bfec5b780aaf974
       local client = LocalPlayer()
       if not client:Alive() or client:IsSpec() then return end
 
@@ -68,11 +64,7 @@ if CLIENT then
   end
 
   function MINIGAME:OnDeactivation()
-<<<<<<< HEAD
     hook.Remove("RenderScreenspaceEffects", "TrippyMinigameEffect")
-=======
-    hook.Remove("RenderScreenspaceEffects", "GrayscaleMinigameEffect")
->>>>>>> 0faf5cba7001e7bbff0bcb1d8bfec5b780aaf974
   end
 
 end
