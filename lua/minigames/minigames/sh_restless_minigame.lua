@@ -33,13 +33,13 @@ if CLIENT then
 else
   ttt2_minigames_restless_deaths = CreateConVar("ttt2_minigames_restless_deaths", "1", {FCVAR_ARCHIVE}, "How many lives the new restless have already used")
   ttt2_minigames_restless_delay = CreateConVar("ttt2_minigames_restless_delay", "3", {FCVAR_ARCHIVE}, "Respawn delay for minigame")
-  ttt2_rst_lives = GetConVar("ttt2_rst_lives")
-  ttt2_rst_min_health = GetConVar("ttt2_rst_min_health")
-  ttt2_rst_health_multi = GetConVar("ttt2_rst_health_multi")
 end
 
 if SERVER then
   function MINIGAME:OnActivation()
+    ttt2_rst_lives = GetConVar("ttt2_rst_lives")
+    ttt2_rst_min_health = GetConVar("ttt2_rst_min_health")
+    ttt2_rst_health_multi = GetConVar("ttt2_rst_health_multi")
     hook.Add("TTT2PostPlayerDeath", "RestlessMinigame", function(ply, _, attacker)
       if not IsValid(ply) or attacker:GetSubRole() == ROLE_INFECTED then return end
       if ply:GetSubRole() == ROLE_RESTLESS then return end
