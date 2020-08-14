@@ -39,7 +39,7 @@ if SERVER then
 
         ply:SetPos(spawnpoint:GetPos())
         net.Send("groundhog_popup")
-        ply:SetDefaultCredits()
+        -- ply:SetDefaultCredits()
       end
     end)
   end
