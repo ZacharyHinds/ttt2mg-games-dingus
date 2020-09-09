@@ -28,9 +28,6 @@ else
   util.AddNetworkString("groundhog_popup")
 end
 
-if SERVER then
-
-end
 if CLIENT then
   local color_tbl = {
     ["$pp_colour_addr"] = 0,

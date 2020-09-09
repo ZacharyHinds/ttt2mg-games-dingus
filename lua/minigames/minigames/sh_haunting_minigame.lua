@@ -14,8 +14,6 @@ if CLIENT then
       English = "Boredom for noone!"
     }
   }
-else
-
 end
 
 if SERVER then
