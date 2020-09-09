@@ -27,7 +27,7 @@ if SERVER then
         local ghostent = ghostents[ply:Nick()]
         ghostent:SetModel(ply:GetModel())
         ghostent:SetPos(ply:GetPos())
-        ghostent:Spawn
+        ghostent:Spawn()
         ghostent:SetNotSolid(true)
         ghostent:SetColor(Color( 245, 245, 245, 100))
         ghostent:SetRenderMode(RENDERMODE_GLOW)
@@ -41,16 +41,19 @@ if SERVER then
       for _, ply in ipairs(player.GetAll()) do
         if ply:Alive() or ply:IsSpec() then continue end
         if not ply:GetNWBool("IsSpooky") then continue end
-        if CurTime() == tick_delay then
+        local hasUpdated = false
+        if CurTime() >= tick_delay and not hasUpdated then
           ghostent = ghostents[ply:Nick()]
           ghostent:SetPos(ply:GetPos())
           tick_delay = CurTime() + 5
+          hasUpdated = true
         end
       end
     end)
   end
 
   function MINIGAME:OnDeactivation()
-
+    hook.Remove("Think", "ghostMinigameUpdate")
+    hook.Remove("TTT2PostPlayerDeath", "HauntingMinigame")
   end
 end
