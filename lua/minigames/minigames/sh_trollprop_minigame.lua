@@ -38,7 +38,7 @@ if SERVER then
     RunConsoleCommand("ttt_spec_prop_base", prop_base * ttt2_minigames_trollprop_multiplier:GetFloat())
     RunConsoleCommand("ttt_spec_prop_maxbonus", prop_maxbonus * ttt2_minigames_trollprop_multiplier:GetFloat())
     RunConsoleCommand("ttt_spec_prop_force", prop_force * ttt2_minigames_trollprop_multiplier:GetFloat())
-    RunConsoleCommand("ttt_spec_prop_rechargetime", prop_recharge * ttt2_minigames_trollprop_multiplier:GetFloat())
+    RunConsoleCommand("ttt_spec_prop_rechargetime", prop_recharge / ttt2_minigames_trollprop_multiplier:GetFloat())
 
 
   end
