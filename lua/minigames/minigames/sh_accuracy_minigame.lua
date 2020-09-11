@@ -2,7 +2,7 @@ if SERVER then
   AddCSLuaFile()
 end
 
-MINIGAME.author = "Wasted"
+MINIGAME.author = "Wasted, Based on Randomat event by Owningle"
 MINIGAME.contact = "Zzzaaaccc13 on TTT2 Discord"
 
 MINIGAME.conVarData = {
@@ -24,12 +24,11 @@ if CLIENT then
       English = "Missed shots backfire and hits heal"
     }
   }
-else
-  ttt2_minigames_accuracy_dmg = CreateConVar("ttt2_minigames_accuracy_dmg", "1", {FCVAR_ARCHIVE}, "Damage dealt per missed shot")
-  ttt2_minigames_accuracy_heal = CreateConVar("ttt2_minigames_accuracy_heal", "1", {FCVAR_ARCHIVE}, "Health gained per hit shot")
 end
 
 if SERVER then
+  local ttt2_minigames_accuracy_dmg = CreateConVar("ttt2_minigames_accuracy_dmg", "1", {FCVAR_ARCHIVE}, "Damage dealt per missed shot")
+  local ttt2_minigames_accuracy_heal = CreateConVar("ttt2_minigames_accuracy_heal", "1", {FCVAR_ARCHIVE}, "Health gained per hit shot")
   function MINIGAME:OnActivation()
     hook.Add("EntityFireBullets", "MinigameAccuracyFire", function(ent, data)
       ent.shotBullet = true

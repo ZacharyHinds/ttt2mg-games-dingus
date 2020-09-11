@@ -2,7 +2,7 @@ if SERVER then
   AddCSLuaFile()
 end
 
-MINIGAME.author = "Wasted"
+MINIGAME.author = "Wasted, Based on Randomat event by Owningle"
 MINIGAME.contact = "Zzzaaaccc13 on TTT2 Discord"
 
 MINIGAME.conVarData = {
@@ -18,17 +18,16 @@ MINIGAME.conVarData = {
 if CLIENT then
   MINIGAME.lang = {
     name = {
-      English = "Ricochet"
+      English = "Pinball"
     },
     desc = {
       English = "That deaf, dumb, blind kid sure plays a mean pinball"
     }
   }
-else
-  ttt2_minigames_pinball_mult = CreateConVar("ttt2_minigames_pinball_mult", "200", {FCVAR_ARCHIVE}, "Velocity multiplier for pinball minigame")
 end
 
 if SERVER then
+  local ttt2_minigames_pinball_mult = CreateConVar("ttt2_minigames_pinball_mult", "200", {FCVAR_ARCHIVE}, "Velocity multiplier for pinball minigame")
   function MINIGAME:OnActivation()
     hook.Add("ShouldCollide", "MinigamePinball", function(ply1, ply2)
       if not (ply1 and ply2) or not (ply1:IsPlayer() and ply2:IsPlayer()) then return end

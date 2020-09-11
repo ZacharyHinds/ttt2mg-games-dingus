@@ -30,12 +30,11 @@ if CLIENT then
       English = "The dead will return as Restless!"
     }
   }
-else
-  ttt2_minigames_restless_deaths = CreateConVar("ttt2_minigames_restless_deaths", "1", {FCVAR_ARCHIVE}, "How many lives the new restless have already used")
-  ttt2_minigames_restless_delay = CreateConVar("ttt2_minigames_restless_delay", "3", {FCVAR_ARCHIVE}, "Respawn delay for minigame")
 end
 
 if SERVER then
+  local ttt2_minigames_restless_deaths = CreateConVar("ttt2_minigames_restless_deaths", "1", {FCVAR_ARCHIVE}, "How many lives the new restless have already used")
+  local ttt2_minigames_restless_delay = CreateConVar("ttt2_minigames_restless_delay", "3", {FCVAR_ARCHIVE}, "Respawn delay for minigame")
   function MINIGAME:OnActivation()
     ttt2_rst_lives = GetConVar("ttt2_rst_lives")
     ttt2_rst_min_health = GetConVar("ttt2_rst_min_health")
