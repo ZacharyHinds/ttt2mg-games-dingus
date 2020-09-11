@@ -11,7 +11,11 @@ MINIGAME.conVarData = {
     min = -1,
     max = 8,
     decimal = 1,
-    desc = "(Def. 0.1)"
+    desc = "(Def. 0.0)"
+  },
+  ttt2_minigames_onice_nopropdmg = {
+    checkbox = true,
+    desc = "(Def. 1)"
   }
 }
 
@@ -24,13 +28,20 @@ if CLIENT then
       English = ""
     }
   }
-else
-  ttt2_minigames_onice_friction = CreateConVar("ttt2_minigames_onice_friction", "0.0", {FCVAR_ARCHIVE}, "Friction amount")
 end
 
 if SERVER then
+local ttt2_minigames_onice_friction = CreateConVar("ttt2_minigames_onice_friction", "0.0", {FCVAR_ARCHIVE}, "Friction amount")
+local ttt2_minigames_onice_nopropdmg = CreateConVar("ttt2_minigames_onice_nopropdmg", "1", {FCVAR_ARCHIVE}, "If enabled, everyone becomes immune to prop damage")
   function MINIGAME:OnActivation()
     RunConsoleCommand("sv_friction", ttt2_minigames_onice_friction:GetFloat())
+
+    if ttt2_minigames_onice_nopropdmg:GetBool() then
+      local plys = player.GetAll()
+      for i = 1, #plys do
+        plys[i]:GiveEquipmentItem("item_ttt_nopropdmg")
+      end
+    end
   end
 
   function MINIGAME:OnDeactivation()
