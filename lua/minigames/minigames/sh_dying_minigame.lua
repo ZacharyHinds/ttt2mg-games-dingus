@@ -40,14 +40,13 @@ if CLIENT then
       English = "Every moment could be your last!"
     }
   }
-else
-  ttt2_minigames_dying_timer = CreateConVar("ttt2_minigames_dying_timer", "3", {FCVAR_ARCHIVE}, "How often damage is dealt")
-  ttt2_minigames_dying_dmg = CreateConVar("ttt2_minigames_dying_dmg", "5", {FCVAR_ARCHIVE}, "How much damage is dealt per instance")
-  ttt2_minigames_dying_affectall = CreateConVar("ttt2_minigames_dying_affectall", "0", {FCVAR_ARCHIVE}, "Should everyone be damaged simultaneously")
-  ttt2_minigames_dying_cankill = CreateConVar("ttt2_minigames_dying_cankill", "1", {FCVAR_ARCHIVE}, "Should people be able to die from this damage?")
 end
 
 if SERVER then
+  local ttt2_minigames_dying_timer = CreateConVar("ttt2_minigames_dying_timer", "3", {FCVAR_ARCHIVE}, "How often damage is dealt")
+  local ttt2_minigames_dying_dmg = CreateConVar("ttt2_minigames_dying_dmg", "5", {FCVAR_ARCHIVE}, "How much damage is dealt per instance")
+  local ttt2_minigames_dying_affectall = CreateConVar("ttt2_minigames_dying_affectall", "0", {FCVAR_ARCHIVE}, "Should everyone be damaged simultaneously")
+  local ttt2_minigames_dying_cankill = CreateConVar("ttt2_minigames_dying_cankill", "1", {FCVAR_ARCHIVE}, "Should people be able to die from this damage?")
 
   function MINIGAME:OnActivation()
     timer.Create("DyingMinigameTimer", ttt2_minigames_dying_timer:GetInt(), 0, function()

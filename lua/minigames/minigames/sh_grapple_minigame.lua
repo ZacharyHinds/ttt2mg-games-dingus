@@ -14,7 +14,6 @@ if CLIENT then
       English = "Does whatever a spider can!"
     }
   }
-else
 end
 
 if SERVER then

@@ -24,7 +24,6 @@ if CLIENT then
     }
   }
 else
-  ttt2_minigames_groundhog_timer = CreateConVar("ttt2_minigames_groundhog_timer", "60", {FCVAR_ARCHIVE}, "Time between teleports")
   util.AddNetworkString("groundhog_popup")
 end
 
