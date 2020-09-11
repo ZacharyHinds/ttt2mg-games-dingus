@@ -14,7 +14,6 @@ if CLIENT then
       English = "Everyone can turn into props!"
     }
   }
-else
 end
 
 if SERVER then
