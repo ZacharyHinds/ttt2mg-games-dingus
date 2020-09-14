@@ -51,11 +51,11 @@ if SERVER then
 
 
       ply:Revive(
-        ttt2_minigames_grave_delay:GetInt(),
+        ttt2_minigames_restless_delay:GetInt(),
         function()
           ply:SetRole(ROLE_RESTLESS, TEAM_RESTLESS)
-          ply:SetHealth(ttt2_minigames_grave_health:GetInt())
-          ply:SetMaxHealth(ttt2_minigames_grave_health:GetInt())
+          ply:SetHealth(ttt2_minigames_restless_delay:GetInt())
+          ply:SetMaxHealth(ttt2_minigames_restless_delay:GetInt())
           SendFullStateUpdate()
         end,
         nil,
