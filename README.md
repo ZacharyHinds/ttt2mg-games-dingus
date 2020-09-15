@@ -23,7 +23,7 @@ That said, due to the way the TTT2 Minigames work, this collection is 100% compa
 * Name: sh_amnesia_minigame
 * Description: One Detective, One Traitor, One Serialkiller, and everyone else if an Amnesiac
 * Addon Dependencies:
-  * [TTT2] Amnesiac [ROLE]
+  * [[TTT2] Amnesiac [ROLE]](https://steamcommunity.com/sharedfiles/filedetails/?id=2001213453)
 * ConVars:
   * ttt2_minigames_amnesia_dethealth  - Detective's health
   * ttt2_minigames_amnesia_detarmor - Detective's armor
@@ -36,8 +36,8 @@ That said, due to the way the TTT2 Minigames work, this collection is 100% compa
 * Name: sh_grapple_minigame
 * Description: Everyone gets a grapple hook and the climb item
 * Addon Dependencies:
-  * Grapple Hook
-  * Climb Perk
+  * [Grapple Hook](https://steamcommunity.com/sharedfiles/filedetails/?id=265714452)
+  * [[TTT2] Climb [ITEM]](https://steamcommunity.com/sharedfiles/filedetails/?id=1840323666)
 
 ### Grayscale
 * Name: sh_grayscale_minigame
@@ -59,8 +59,8 @@ That said, due to the way the TTT2 Minigames work, this collection is 100% compa
 * Name: sh_medieval_minigame
 * Description: Replaces weapons with infinite-shot bow and shovel
 * Addon Dependencies:
-  * Bow
-  * Shovel
+  * [TTT Hunting Bow](https://steamcommunity.com/sharedfiles/filedetails/?id=1372718426)
+  * [Shovel for TTT](https://steamcommunity.com/sharedfiles/filedetails/?id=647112181)
 
 ### Trouble in Terrorist Town: On Ice
 * Name: sh_onice_minigame
@@ -79,7 +79,7 @@ That said, due to the way the TTT2 Minigames work, this collection is 100% compa
 * Name: sh_prophunt_minigame
 * Description: Gives every player a prop disguiser and prop damage immunity
 * Addon Dependencies:
-  * Prop Disguiser
+  * [Prop Disguiser](https://steamcommunity.com/sharedfiles/filedetails/?id=1662844145)
 
 ### Recoil
 * Name: sh_recoil_minigame
@@ -95,7 +95,7 @@ That said, due to the way the TTT2 Minigames work, this collection is 100% compa
 * Name: sh_restless_minigame
 * Description: Dead players will revive as a Restless
 * Addon Dependencies:
-  * [TTT2] Restless [ROLE]
+  * [[TTT2] Restless [ROLE]](https://steamcommunity.com/sharedfiles/filedetails/?id=2185765394)
 * ConVars:
   * ttt2_minigames_restless_deaths  - Amount to subtract from minigame Restless' lives
   * ttt2_minigames_restless_delay - Respawn delay for minigame
@@ -114,7 +114,7 @@ That said, due to the way the TTT2 Minigames work, this collection is 100% compa
 * Name: sh_unknowns_minigame
 * Description: One Detective, One Traitor, everyone else is an Unknown
 * Addon Dependencies:
-  * [TTT2] Unknown [ROLE]
+  * [[TTT2] Unknown [ROLE]](https://steamcommunity.com/sharedfiles/filedetails/?id=1457185541)
 * ConVars:
   * ttt2_minigames_unknowns_dethealth - Detective's health
   * ttt2_minigames_unknowns_detarmor  - Detective's armor
