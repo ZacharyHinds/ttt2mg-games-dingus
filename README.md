@@ -4,7 +4,7 @@ This is a collection of minigames for TTT2 Minigames.
 ## Why aren't these included in the Randomat collection?
 I've separated out these minigames because by and large, all the games in the Randomat are not of my original design, but instead rewritten events from the variety of Randomat versions available.
 
-Almost all of the games included in this collection are based on ideas that I came up with or that were provided by people on my server, with the exception of Pinball and Accuracy which are based on Owningle's extra randomat events.
+Almost all of the games included in this collection are based on ideas that I came up with or that were provided by people on my server, with the exception of Accuracy, Pinball, and Recoil which are based on Owningle's extra randomat events.
 
 That said, due to the way the TTT2 Minigames work, this collection is 100% compatible with the TTT2 Minigames Randomat and are able to be activated by using the Randomat.
 
