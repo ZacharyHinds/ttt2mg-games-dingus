@@ -133,3 +133,9 @@ That said, due to the way the TTT2 Minigames work, this collection is 100% compa
 ### Karmic Wrath
 * Name: sh_wrath_minigame
 * Description: Deals damage to everyone based on their karma
+
+## Incomplete or Broken Minigames
+
+### Full Upgrade
+* Name: sh_fullupgrade_minigame
+* Description: All base roles are upgraded into a subrole (ex. Innocent -> Survivalist, Traitor -> Mesmerist, etc.)
