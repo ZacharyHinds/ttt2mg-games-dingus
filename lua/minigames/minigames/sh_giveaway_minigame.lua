@@ -24,36 +24,33 @@ if SERVER then
     local give_weps = {}
     for i = 1, #weps do
       local wep = weps[i]
-      if wep and wep.CanBuy then
+      if wep and (wep.CanBuy and #wep.CanBuy > 0) then
         give_weps[#give_weps + 1] = wep
+        print("[Giveaway Minigame] Added Potential Prize: " .. (give_weps[#give_weps].PrintName or WEPS.GetClass(give_weps[#give_weps])))
       end
     end
-    local item
-    local is_item
-    local swep_table
-    repeat
-      if #weps <= 0 then return end
-      local rnd = math.random(#give_weps)
-      item = give_weps[rnd]
-      is_item = tonumber(item.id)
-      swep_table = (not is_item) and weapons.GetStored(item.ClassName) or nil
-      table.remove(give_weps, rnd)
-    until IsValid(item) and (is_item or swep_table)
-    local print_name = LANG.TryTranslation(item:GetPrintName()) or item.PrintName or WEPS.GetClass(item)
+    local item = give_weps[math.random(#give_weps)]
+    -- local is_item = tonumber(item.id)
+    -- local swep_table = (not is_item) and weapons.GetStored(item.ClassName) or nil
+    local print_name = item.PrintName or WEPS.GetClass(item)
 
-    local plys = util.GetAlivePlayers()
-    for i = 1, #plys do
-      local ply = plys[i]
-      if not IsValid(ply) then continue end
-      if is_item then
-        ply:GiveEquipmentItem(is_item)
-      elseif swep_table then
-        ply:GiveEquipmentWeapon(swep_table)
+
+    timer.Simple(12, function()
+      local plys = util.GetAlivePlayers()
+      for i = 1, #plys do
+        local ply = plys[i]
+        if not IsValid(ply) then continue end
+        ply:Give(WEPS.GetClass(item))
+        -- if is_item then
+        --   ply:GiveEquipmentItem(is_item)
+        -- elseif swep_table then
+        --   ply:GiveEquipmentWeapon(swep_table)
+        -- end
       end
-    end
-    net.Start("ttt2mg_giveaway")
-    net.WriteString(print_name)
-    net.Broadcast()
+      net.Start("ttt2mg_giveaway")
+      net.WriteString(print_name)
+      net.Broadcast()
+    end)
   end
 
   function MINIGAME:OnDeactivation()
@@ -67,9 +64,11 @@ if CLIENT then
       text = "Today's Giveaway is..."},
       "",
     3)
-    EPOP:AddMessage({
-      text = wep_name},
-      "",
-    2)
+    timer.Simple(3, function()
+      EPOP:AddMessage({
+        text = wep_name},
+        "",
+      2)
+    end)
   end)
 end
