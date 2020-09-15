@@ -56,14 +56,19 @@ if SERVER then
       dmg:SetInflictor(game.GetWorld())
       dmg:SetDamageForce(Vector(0, 0, 1))
 
-      local hasDone = false
-      for _, ply in RandomPairs(player.GetAll()) do
-        if (hasDone and not ttt2_minigames_dying_affectall:GetBool()) then return end
-
+      local plys = util.GetAlivePlayers()
+      for i = 1, #plys do
+        local ply
+        repeat
+          if #plys <= 0 then return end
+          local rnd = math.random(#plys)
+          ply = plys[rnd]
+          table.remove(plys, rnd)
+        until IsValid(ply) and ply:Alive() and not ply:IsSpec()
         if not (ply:Health() < ttt2_minigames_dying_dmg:GetInt()) or ttt2_minigames_dying_cankill:GetBool() then
           ply:TakeDamageInfo(dmg)
-          hasDone = true
         end
+        if not ttt2_minigames_dying_affectall:GetBool() then return end
       end
     end)
   end
