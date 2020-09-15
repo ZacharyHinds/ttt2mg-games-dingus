@@ -39,10 +39,16 @@ if SERVER then
     local isSet1 = false
     local isSet2 = false
     local isSet3 = false
+    local plys = util.GetAlivePlayers()
 
-    for _, ply in RandomPairs(player.GetAll()) do
-      if not ply:Alive() or ply:IsSpec() then continue end
-
+    for i = 1, #plys do
+      local ply
+      repeat
+        if #plys <= 0 then return end
+        local rnd = math.random(#plys)
+        ply = plys[rnd]
+        table.remove(plys, rnd)
+      until IsValid(ply)
       if not isSet1 then
         ply:SetRole(ROLE_DETECTIVE, TEAM_INNOCENT)
         ply:SetMaxHealth(ttt2_minigames_amnesia_dethealth:GetInt())
