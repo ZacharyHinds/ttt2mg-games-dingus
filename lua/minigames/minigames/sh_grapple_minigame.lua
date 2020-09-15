@@ -18,7 +18,9 @@ end
 
 if SERVER then
   function MINIGAME:OnActivation()
-    for _, ply in ipairs(player.GetAll()) do
+    local plys = util.GetAlivePlayers()
+    for i = 1, #plys do
+      local ply = plys[i]
       ply:GiveEquipmentWeapon("grapplehook")
       ply:GiveEquipmentItem("item_ttt_climb")
     end
