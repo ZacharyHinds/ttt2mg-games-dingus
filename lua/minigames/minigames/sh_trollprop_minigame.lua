@@ -28,11 +28,15 @@ end
 
 if SERVER then
   local ttt2_minigames_trollprop_multiplier = CreateConVar("ttt2_minigames_trollprop_multiplier", 2.0, {FCVAR_ARCHIVE}, "Prop power multiplier")
-  local prop_base = GetConVar("ttt_spec_prop_base"):GetFloat()
-  local prop_maxbonus = GetConVar("ttt_spec_prop_maxbonus"):GetFloat()
-  local prop_force = GetConVar("ttt_spec_prop_force"):GetFloat()
-  local prop_recharge = GetConVar("ttt_spec_prop_rechargetime"):GetFloat()
+  local prop_base
+  local prop_maxbonus
+  local prop_force
+  local prop_recharge
   function MINIGAME:OnActivation()
+    prop_base = GetConVar("ttt_spec_prop_base"):GetFloat()
+    prop_maxbonus = GetConVar("ttt_spec_prop_maxbonus"):GetFloat()
+    prop_force = GetConVar("ttt_spec_prop_force"):GetFloat()
+    prop_recharge = GetConVar("ttt_spec_prop_rechargetime"):GetFloat()
 
     RunConsoleCommand("ttt_spec_prop_base", prop_base * ttt2_minigames_trollprop_multiplier:GetFloat())
     RunConsoleCommand("ttt_spec_prop_maxbonus", prop_maxbonus * ttt2_minigames_trollprop_multiplier:GetFloat())
