@@ -24,6 +24,7 @@ That said, due to the way the TTT2 Minigames work, this collection is 100% compa
 * Description: One Detective, One Traitor, One Serialkiller, and everyone else if an Amnesiac
 * Addon Dependencies:
   * [[TTT2] Amnesiac [ROLE]](https://steamcommunity.com/sharedfiles/filedetails/?id=2001213453)
+  * [[TTT2] Serialkiller [ROLE]](https://steamcommunity.com/sharedfiles/filedetails/?id=1363905854)
 * ConVars:
   * ttt2_minigames_amnesia_dethealth  - Detective's health
   * ttt2_minigames_amnesia_detarmor - Detective's armor
