@@ -32,11 +32,17 @@ if SERVER then
 
   function MINIGAME:OnActivation()
     timer.Create("GroundhogMinigameTimer", ttt2_minigames_groundhog_timer:GetInt(), 0, function()
-      for _, ply in RandomPairs(player.GetAll()) do
-        if not ply:Alive() or ply:IsSpec() then continue end
+      local plys = util.GetAlivePlayers()
+      for i = 1, #plys do
+        local ply
+        repeat
+          if #plys <= 0 then return end
+          local rnd = math.random(#plys)
+          ply = plys[rnd]
+          table.remove(plys, rnd)
+        until IsValid(ply)
 
         local spawnpoint = spawn.GetRandomPlayerSpawnEntity(ply)
-
         ply:SetPos(spawnpoint:GetPos())
         net.Send("groundhog_popup")
         -- ply:SetDefaultCredits()
