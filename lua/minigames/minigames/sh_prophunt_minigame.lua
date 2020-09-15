@@ -28,7 +28,4 @@ if SERVER then
 
   end
 
-  function MINIGAME:IsSelectable()
-    return false
-  end
 end
