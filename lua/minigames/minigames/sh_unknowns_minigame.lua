@@ -38,24 +38,27 @@ if SERVER then
   function MINIGAME:OnActivation()
     local isSet1 = false
     local isSet2 = false
-
-    for _, ply in RandomPairs(player.GetAll()) do
-      if not ply:Alive() or ply:IsSpec() then continue end
-
-      if not isSet1 then
-        ply:SetRole(ROLE_DETECTIVE, TEAM_INNOCENT)
-        ply:SetDefaultCredits()
-        ply:SetMaxHealth(ttt2_minigames_unknowns_dethealth:GetInt())
-        ply:SetHealth(ttt2_minigames_unknowns_dethealth:GetInt())
-        ply:GiveArmor(ttt2_minigames_unknowns_detarmor:GetInt())
-        isSet1 = true
-      elseif not isSet2 then
-        ply:SetRole(ROLE_TRAITOR, TEAM_TRAITOR)
-        ply:SetDefaultCredits()
-        isSet2 = true
-      else
-        ply:SetRole(ROLE_UNKNOWN, TEAM_NONE)
-      end
+    local plys = util.GetAlivePlayers()
+    local ply
+    repeat
+      if #plys <= 0 then return end
+      local rnd = math.random(#plys)
+      ply = plys[ply]
+      table.remove(plys, rnd)
+    until IsValid(ply)
+    if not isSet1 then
+      ply:SetRole(ROLE_DETECTIVE, TEAM_INNOCENT)
+      ply:SetDefaultCredits()
+      ply:SetMaxHealth(ttt2_minigames_unknowns_dethealth:GetInt())
+      ply:SetHealth(ttt2_minigames_unknowns_dethealth:GetInt())
+      ply:GiveArmor(ttt2_minigames_unknowns_detarmor:GetInt())
+      isSet1 = true
+    elseif not isSet2 then
+      ply:SetRole(ROLE_TRAITOR, TEAM_TRAITOR)
+      ply:SetDefaultCredits()
+      isSet2 = true
+    else
+      ply:SetRole(ROLE_UNKNOWN, TEAM_NONE)
     end
     SendFullStateUpdate()
   end
