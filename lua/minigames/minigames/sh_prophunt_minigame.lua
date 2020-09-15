@@ -19,7 +19,7 @@ end
 if SERVER then
   function MINIGAME:OnActivation()
     for _, ply in ipairs(player.GetAll()) do
-      ply:GiveEquipmentWeapon("weapon_ttt_prophide")
+      ply:GiveEquipmentWeapon("weapon_ttt_prop_disguiser")
       ply:GiveEquipmentItem("item_ttt_nopropdmg")
     end
   end
