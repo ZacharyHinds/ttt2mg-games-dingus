@@ -46,12 +46,9 @@ if CLIENT then
       DrawColorModify(color_tbl)
       cam.Start3D(EyePos(), EyeAngles())
 
-      for _, ply in ipairs(player.GetAll()) do
-        render.SuppressEngineLighting(true)
-        render.SetColorModulation(1, 1, 1)
-
-        render.SuppressEngineLighting(false)
-      end
+      render.SuppressEngineLighting(true)
+      render.SetColorModulation(1, 1, 1)
+      render.SuppressEngineLighting(false)
 
       cam.End3D()
     end)
