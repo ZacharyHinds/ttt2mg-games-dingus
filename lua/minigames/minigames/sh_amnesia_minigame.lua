@@ -30,12 +30,11 @@ if CLIENT then
       English = "One Detective, One Traitor, One Serialkiller, everyone else is an Amnesiac!"
     }
   }
-else
-  ttt2_minigames_amnesia_dethealth = GetConVar("ttt2_minigames_amnesia_dethealth", "150", {FCVAR_ARCHIVE}, "How much health the detective has")
-  ttt2_minigames_amnesia_detarmor = GetConVar("ttt2_minigames_amnesia_detarmor", "30", {FCVAR_ARCHIVE}, "How much armor the detective has")
 end
 
 if SERVER then
+  local ttt2_minigames_amnesia_dethealth = GetConVar("ttt2_minigames_amnesia_dethealth", "150", {FCVAR_ARCHIVE}, "How much health the detective has")
+  local ttt2_minigames_amnesia_detarmor = GetConVar("ttt2_minigames_amnesia_detarmor", "30", {FCVAR_ARCHIVE}, "How much armor the detective has")
   function MINIGAME:OnActivation()
     local isSet1 = false
     local isSet2 = false

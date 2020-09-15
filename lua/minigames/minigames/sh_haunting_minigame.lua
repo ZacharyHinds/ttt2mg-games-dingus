@@ -17,8 +17,8 @@ if CLIENT then
 end
 
 if SERVER then
+  local ghostents = {}
   function MINIGAME:OnActivation()
-    ghostents = {}
     hook.Add("TTT2PostPlayerDeath", "HauntingMinigame", function(ply, _, attacker)
       timer.Simple(3, function()
         ghostents[ply:Nick()] = ents.Create("npc_kleiner")

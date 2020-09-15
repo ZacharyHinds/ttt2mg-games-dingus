@@ -23,8 +23,6 @@ if CLIENT then
       English = "I think I'm gonna be sick!"
     }
   }
-else
-  util.AddNetworkString("groundhog_popup")
 end
 
 if CLIENT then

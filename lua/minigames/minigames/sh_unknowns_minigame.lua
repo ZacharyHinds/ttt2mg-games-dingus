@@ -30,12 +30,11 @@ if CLIENT then
       English = "One Detective, One Traitor, everyone else is Unknown!"
     }
   }
-else
-  ttt2_minigames_unknowns_dethealth = CreateConVar("ttt2_minigames_unknowns_dethealth", "120", {FCVAR_ARCHIVE}, "How much health the detective has")
-  ttt2_minigames_unknowns_detarmor = CreateConVar("ttt2_minigames_unknowns_detarmor", "30", {FCVAR_ARCHIVE}, "How much armor the detective has")
 end
 
 if SERVER then
+  local ttt2_minigames_unknowns_dethealth = CreateConVar("ttt2_minigames_unknowns_dethealth", "120", {FCVAR_ARCHIVE}, "How much health the detective has")
+  local ttt2_minigames_unknowns_detarmor = CreateConVar("ttt2_minigames_unknowns_detarmor", "30", {FCVAR_ARCHIVE}, "How much armor the detective has")
   function MINIGAME:OnActivation()
     local isSet1 = false
     local isSet2 = false
