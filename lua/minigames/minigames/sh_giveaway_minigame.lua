@@ -39,10 +39,7 @@ if SERVER then
       swep_table = (not is_item) and weapons.GetStored(item.ClassName) or nil
       table.remove(give_weps, rnd)
     until IsValid(item) and (is_item or swep_table)
-    local print_name = item
-    if item.PrintName then
-      print_name = item.PrintName
-    end
+    local print_name = LANG.TryTranslation(item:GetPrintName()) or item.PrintName or WEPS.GetClass(item)
 
     local plys = util.GetAlivePlayers()
     for i = 1, #plys do
