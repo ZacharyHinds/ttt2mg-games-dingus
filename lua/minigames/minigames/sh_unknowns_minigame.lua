@@ -66,4 +66,8 @@ if SERVER then
   function MINIGAME:OnDeactivation()
 
   end
+
+  function MINIGAME:IsSelectable()
+    if not UNKNOWN then return false end
+  end
 end
