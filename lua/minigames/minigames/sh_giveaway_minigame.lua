@@ -26,7 +26,7 @@ if SERVER then
       local wep = weps[i]
       if wep and (wep.CanBuy and #wep.CanBuy > 0) then
         give_weps[#give_weps + 1] = wep
-        print("[Giveaway Minigame] Added Potential Prize: " .. (give_weps[#give_weps].PrintName or WEPS.GetClass(give_weps[#give_weps])))
+        -- print("[Giveaway Minigame] Added Potential Prize: " .. (give_weps[#give_weps].PrintName or WEPS.GetClass(give_weps[#give_weps])))
       end
     end
     local item = give_weps[math.random(#give_weps)]
