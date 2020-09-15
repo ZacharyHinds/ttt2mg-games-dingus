@@ -19,16 +19,13 @@ end
 if SERVER then
   function MINIGAME:OnActivation()
     local karma_max = GetConVar("ttt_karma_max"):GetInt()
-    print("[Wrath Minigame] Max Karma: " .. karma_max)
     local plys = util.GetAlivePlayers()
     for i = 1, #plys do
       local ply = plys[i]
       local ply_karma = ply:GetLiveKarma()
-      print("[Wrath Minigame] " .. ply:Nick() .. "Live Karma: " .. ply_karma)
       if ply_karma >= karma_max then continue end
 
       local dmgnum = 100 - (100 * (ply_karma / karma_max))
-      print("[Wrath Minigame] " .. ply:Nick() .. "Damage: " .. dmgnum)
       local dmginfo = DamageInfo()
       dmginfo:SetDamage(dmgnum)
       dmginfo:SetAttacker(game.GetWorld())
