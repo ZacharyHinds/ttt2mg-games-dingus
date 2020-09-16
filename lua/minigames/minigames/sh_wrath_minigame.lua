@@ -5,6 +5,15 @@ end
 MINIGAME.author = "Wasted"
 MINIGAME.contact = "Zzzaaaccc13 on TTT2 Discord"
 
+MINIGAME.conVarData = {
+  ttt2_minigames_wrath_max_dmg = {
+    slider = true,
+    min = 0,
+    max = 200,
+    desc = "(Def. 100)"
+  }
+}
+
 if CLIENT then
   MINIGAME.lang = {
     name = {
@@ -17,6 +26,7 @@ if CLIENT then
 end
 
 if SERVER then
+  CreateConVar("ttt2_minigames_wrath_max_dmg", "100", {FCVAR_ARCHIVE}, "Maximum damage dealt at minimum karma")
   function MINIGAME:OnActivation()
     local karma_max = GetConVar("ttt_karma_max"):GetInt()
     local plys = util.GetAlivePlayers()
@@ -25,7 +35,8 @@ if SERVER then
       local ply_karma = ply:GetLiveKarma()
       if ply_karma >= karma_max then continue end
 
-      local dmgnum = 100 - (100 * (ply_karma / karma_max))
+      local maxdmg = GetConVar("ttt2_minigames_wrath_max_dmg"):GetInt()
+      local dmgnum = maxdmg - (maxdmg * (ply_karma / karma_max))
       local dmginfo = DamageInfo()
       dmginfo:SetDamage(dmgnum)
       dmginfo:SetAttacker(game.GetWorld())
