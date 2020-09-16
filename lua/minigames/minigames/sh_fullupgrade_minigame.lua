@@ -1,3 +1,5 @@
+-- Still broken, will fix eventually
+
 if SERVER then
   AddCSLuaFile()
 end
@@ -17,37 +19,19 @@ if CLIENT then
 end
 
 if SERVER then
-  function TraitorRoles()
-    local roleData = roles.GetByIndex(ROLE_TRAITOR)
-
-    return roleData:GetSubRoles()
-  end
-
-  function InnocentRoles()
-    local roleData = roles.GetByIndex(ROLE_INNOCENT)
-
-    return roleData:GetSubRoles()
-  end
-
   function MINIGAME:OnActivation()
-    local isUpgraded
-    for _, ply in ipairs(player.GetAll()) do
-      isUpgraded = false
+    local plys = player.GetAll()
+    local iroles = INNOCENT:GetSubRoles()
+    local troles = TRAITOR:GetSubRoles()
+    for i = 1, #plys do
+      local ply = plys[i]
       if ply:GetSubRole() == ROLE_INNOCENT then
-        for k, rl in RandomPairs(InnocentRoles()) do
-          if isUpgraded then continue end
-          ply:SetRole(rl)
-          isUpgraded = true
-        end
+        ply:SetRole(iroles[math.random(#iroles)])
       elseif ply:GetSubRole() == ROLE_TRAITOR then
-        for k, rl in RandomPairs(TraitorRoles()) do
-          if isUpgraded then continue end
-          ply:SetRole(rl)
-          isUpgraded = true
-        end
+        ply:SetRole(troles[math.random(#troles)])
       end
     end
-    SendFullStateUpdate()
+    timer.Simple(0.5, SendFullStateUpdate)
   end
 
   function MINIGAME:OnDeactivation()
