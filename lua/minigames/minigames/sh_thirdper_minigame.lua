@@ -19,8 +19,10 @@ end
 if CLIENT then
   function MINIGAME:OnActivation()
     hook.Add("CalcView", "ThirdpersonMinigame", function(ply, pos, angles, fov)
+      local new_origin = pos - (angles:Forward() * 100)
+      new_origin.z = new_origin.z + 10
       local view = {
-        origin = pos - (angles:Forward() * 100),
+        origin = new_origin,
         angles = angles,
         fov = fov,
         drawviewer = true
@@ -32,4 +34,5 @@ if CLIENT then
   function MINIGAME:OnDeactivation()
     hook.Remove("CalcView", "ThirdpersonMinigame")
   end
+
 end
