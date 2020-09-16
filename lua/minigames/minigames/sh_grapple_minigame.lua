@@ -29,4 +29,8 @@ if SERVER then
   function MINIGAME:OnDeactivation()
 
   end
+
+  function MINIGAME:IsSelectable()
+    if not WEPS.IsInstalled("grapplehook") or not items.GetStored("item_ttt_climb") then return false end
+  end
 end
