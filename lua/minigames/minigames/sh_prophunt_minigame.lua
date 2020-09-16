@@ -18,7 +18,9 @@ end
 
 if SERVER then
   function MINIGAME:OnActivation()
-    for _, ply in ipairs(player.GetAll()) do
+    local plys = util.GetAlivePlayers()
+    for i = 1, #plys do
+      local ply = plys[i]
       ply:GiveEquipmentWeapon("weapon_ttt_prop_disguiser")
       ply:GiveEquipmentItem("item_ttt_nopropdmg")
     end
@@ -28,4 +30,7 @@ if SERVER then
 
   end
 
+  function MINIGAME:IsSelectable()
+    if not WEPS.IsInstalled("weapon_ttt_prop_disguiser") then return false end
+  end
 end
