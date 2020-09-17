@@ -73,4 +73,12 @@ if SERVER then
   function MINIGAME:OnDeactivation()
     hook.Remove("TTT2PostPlayerDeath", "RestlessMinigame")
   end
+
+  function MINIGAME:IsSelectable()
+    if not RESTLESS then
+      return false
+    else
+      return true
+    end
+  end
 end

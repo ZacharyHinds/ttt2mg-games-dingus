@@ -73,6 +73,10 @@ if SERVER then
   end
 
   function MINIGAME:IsSelectable()
-    if not AMNESIAC and SERIALKILLER then return false end
+    if not AMNESIAC and SERIALKILLER then
+      return false
+    else
+      return true
+    end
   end
 end
