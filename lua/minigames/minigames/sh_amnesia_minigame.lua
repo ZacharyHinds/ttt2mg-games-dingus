@@ -33,8 +33,8 @@ if CLIENT then
 end
 
 if SERVER then
-  local ttt2_minigames_amnesia_dethealth = GetConVar("ttt2_minigames_amnesia_dethealth", "150", {FCVAR_ARCHIVE}, "How much health the detective has")
-  local ttt2_minigames_amnesia_detarmor = GetConVar("ttt2_minigames_amnesia_detarmor", "30", {FCVAR_ARCHIVE}, "How much armor the detective has")
+  local ttt2_minigames_amnesia_dethealth = CreateConVar("ttt2_minigames_amnesia_dethealth", "150", {FCVAR_ARCHIVE}, "How much health the detective has")
+  local ttt2_minigames_amnesia_detarmor = CreateConVar("ttt2_minigames_amnesia_detarmor", "30", {FCVAR_ARCHIVE}, "How much armor the detective has")
   function MINIGAME:OnActivation()
     local isSet1 = false
     local isSet2 = false
