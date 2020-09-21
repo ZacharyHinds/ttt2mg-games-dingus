@@ -10,7 +10,7 @@ MINIGAME.conVarData = {
     slider = true,
     min = 1,
     max = 240,
-    desc = "(Def. 30)"
+    desc = "ttt2_minigames_groundhog_timer (Def. 30)"
   }
 }
 

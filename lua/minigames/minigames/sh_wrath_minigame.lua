@@ -10,7 +10,7 @@ MINIGAME.conVarData = {
     slider = true,
     min = 0,
     max = 200,
-    desc = "(Def. 100)"
+    desc = "ttt2_minigames_wrath_max_dmg (Def. 100)"
   }
 }
 

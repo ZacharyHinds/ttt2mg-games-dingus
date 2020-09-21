@@ -11,7 +11,7 @@ MINIGAME.conVarData = {
     min = 0,
     max = 5,
     decimal = 1,
-    desc = "(Def. 2)"
+    desc = "ttt2_minigames_trollprop_multiplier (Def. 2)"
   }
 }
 

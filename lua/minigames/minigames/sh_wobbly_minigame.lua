@@ -11,32 +11,32 @@ MINIGAME.conVarData = {
     min = -1,
     max = 5,
     decimal = 1,
-    desc = "(Def. 2.0)"
+    desc = "ttt2_minigames_wobbly_max_grav (Def. 2.0)"
   },
   ttt2_minigames_wobbly_min_grav = {
     slider = true,
     min = -1,
     max = 5,
     decimal = 1,
-    desc = "(Def. 0.1)"
+    desc = "ttt2_minigames_wobbly_min_grav (Def. 0.1)"
   },
   ttt2_minigames_wobbly_max_speed = {
     slider = true,
     min = -100,
     max = 100,
     decimal = 0,
-    desc = "(Def. 50)"
+    desc = "ttt2_minigames_wobbly_max_speed (Def. 50)"
   },
   ttt2_minigames_wobbly_min_speed = {
     slider = true,
     min = -100,
     max = 100,
     decimal = 0,
-    desc = "(Def. -50)"
+    desc = "ttt2_minigames_wobbly_min_speed (Def. -50)"
   },
   ttt2_minigames_wobbly_universal_grav = {
     checkbox = true,
-    desc = "(Def. 1)"
+    desc = "ttt2_minigames_wobbly_universal_grav (Def. 1)"
   }
 }
 
@@ -97,9 +97,13 @@ end
 if CLIENT then
   net.Receive("ttt2mg_wobbly_popup", function()
     EPOP:AddMessage({
-      text = "Time-Space Anomaly Detected!"},
-    "Gravity and Time Warp Imminent",
-    2
+        text = "Time-Space Anomaly Detected!",
+        color = COLOR_ORANGE
+    },
+      "Gravity and Time Warp Imminent",
+      4,
+      nil,
+      true
     )
   end)
 end

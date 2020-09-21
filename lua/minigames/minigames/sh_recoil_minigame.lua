@@ -11,7 +11,7 @@ MINIGAME.conVarData = {
     min = 1000,
     max = 2000000,
     decimal = 0,
-    desc = "(Def. 150000)"
+    desc = "ttt2_minigames_recoil_max (Def. 150000)"
   }
 }
 

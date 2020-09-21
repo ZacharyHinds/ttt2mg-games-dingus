@@ -10,7 +10,7 @@ MINIGAME.conVarData = {
     slider = true,
     min = 0,
     max = 200,
-    desc = "(Def. 75)"
+    desc = "ttt2_minigames_antikarma_max_dmg (Def. 75)"
   }
 }
 

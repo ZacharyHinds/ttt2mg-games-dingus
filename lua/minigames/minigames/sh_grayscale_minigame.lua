@@ -5,15 +5,6 @@ end
 MINIGAME.author = "Wasted"
 MINIGAME.contact = "Zzzaaaccc13 on TTT2 Discord"
 
-MINIGAME.conVarData = {
-  ttt2_minigames_groundhog_timer = {
-    slider = true,
-    min = 1,
-    max = 240,
-    desc = "(Def. 30)"
-  }
-}
-
 if CLIENT then
   MINIGAME.lang = {
     name = {

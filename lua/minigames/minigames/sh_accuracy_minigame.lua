@@ -10,8 +10,13 @@ MINIGAME.conVarData = {
     slider = true,
     min = 1,
     max = 20,
-    decimal = 0,
-    desc = "(Def. 0.1)"
+    desc = "ttt2_minigames_accuracy_dmg (Def. 1)"
+  },
+  ttt2_minigames_accuracy_heal = {
+    slider = true,
+    min = 0,
+    max = 20,
+    desc = "ttt2_minigames_accuracy_heal (Def. 1)"
   }
 }
 

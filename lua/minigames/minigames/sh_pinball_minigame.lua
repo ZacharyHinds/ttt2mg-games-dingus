@@ -11,7 +11,7 @@ MINIGAME.conVarData = {
     min = 1,
     max = 200,
     decimal = 0,
-    desc = "(Def. 100)"
+    desc = "ttt2_minigames_pinball_mult (Def. 100)"
   }
 }
 

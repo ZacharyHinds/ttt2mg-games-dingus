@@ -10,14 +10,14 @@ MINIGAME.conVarData = {
     slider = true,
     min = 1,
     max = 10,
-    desc = "(Def. 1)"
+    desc = "ttt2_minigames_restless_deaths (Def. 1)"
   },
 
   ttt2_minigames_restless_delay = {
     slider = true,
     min = 0,
     max = 30,
-    desc = "(Def. 3)"
+    desc = "ttt2_minigames_restless_delay (Def. 3)"
   }
 }
 

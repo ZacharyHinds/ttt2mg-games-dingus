@@ -10,14 +10,14 @@ MINIGAME.conVarData = {
     slider = true,
     min = 100,
     max = 200,
-    desc = "(Def. 120)"
+    desc = "ttt2_minigames_unknowns_dethealth (Def. 120)"
   },
 
   ttt2_minigames_unknowns_detarmor = {
     slider = true,
     min = 0,
     max = 100,
-    desc = "(Def. 30)"
+    desc = "ttt2_minigames_unknowns_detarmor (Def. 30)"
   }
 }
 

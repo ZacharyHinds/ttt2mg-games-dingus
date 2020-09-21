@@ -24,12 +24,13 @@ if SERVER then
 
       local report_string
       if attacker:IsPlayer() then
-        report_string = victim:Nick() .. " has been murdered!"
+        report_string = "ttt2mg_reporter_murder"
       else
-        report_string = victim:Nick() .. " has died!"
+        report_string = "ttt2mg_reporter_died"
       end
       net.Start("ttt2mg_reporter_minigame")
       net.WriteString(report_string)
+      net.WriteString(victim:Nick())
       net.Broadcast()
     end)
   end
@@ -41,9 +42,15 @@ end
 
 if CLIENT then
   net.Receive("ttt2mg_reporter_minigame", function()
-    local report_string = net.ReadString()
+    local report_string = LANG.GetParamTranslation(net.ReadString(), {nick = net.ReadString()})
     EPOP:AddMessage({
-      text = report_string
-    })
+        text = report_string,
+        color = COLOR_ORANGE
+    },
+      nil,
+      4,
+      nil,
+      true
+    )
   end)
 end

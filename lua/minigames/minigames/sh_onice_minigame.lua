@@ -11,11 +11,11 @@ MINIGAME.conVarData = {
     min = -1,
     max = 8,
     decimal = 1,
-    desc = "(Def. 0.0)"
+    desc = "ttt2_minigames_onice_friction (Def. 0.0)"
   },
   ttt2_minigames_onice_nopropdmg = {
     checkbox = true,
-    desc = "(Def. 1)"
+    desc = "ttt2_minigames_onice_nopropdmg (Def. 1)"
   }
 }
 
