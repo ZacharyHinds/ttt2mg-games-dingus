@@ -60,15 +60,26 @@ end
 if CLIENT then
   net.Receive("ttt2mg_giveaway", function()
     local wep_name = net.ReadString()
+    wep_name = LANG.TryTranslation(wep_name) or wep_name
     EPOP:AddMessage({
-      text = "Today's Giveaway is..."},
-      "",
-    3)
+        text = LANG.TryTranslation("ttt2mg_giveaway_epop"),
+        color = COLOR_ORANGE
+    },
+      nil,
+      3,
+      nil,
+      true
+    )
     timer.Simple(3, function()
       EPOP:AddMessage({
-        text = wep_name},
-        "",
-      2)
+        text = wep_name,
+        color = COLOR_ORANGE
+      },
+        nil,
+        2,
+        nil,
+        true
+      )
     end)
   end)
 end

@@ -10,7 +10,7 @@ MINIGAME.conVarData = {
     slider = true,
     min = 1,
     max = 240,
-    desc = "ttt2_minigames_groundhog_timer (Def. 30)"
+    desc = "ttt2_minigames_groundhog_timer (Def. 60)"
   }
 }
 
@@ -44,7 +44,8 @@ if SERVER then
 
         local spawnpoint = spawn.GetRandomPlayerSpawnEntity(ply)
         ply:SetPos(spawnpoint:GetPos())
-        net.Send("groundhog_popup")
+        net.Start("groundhog_popup")
+        net.Send(ply)
         -- ply:SetDefaultCredits()
       end
     end)
@@ -57,10 +58,13 @@ end
 if CLIENT then
   net.Receive("groundhog_popup", function()
     EPOP:AddMessage({
-        text = "Again!"
+        text = LANG.TryTranslation("tt2mg_groundhog_epop"),
+        color = COLOR_ORANGE
       },
-      "Okay, campers, rise and shine and don't forget your booties 'cause it's cold out there today!",
-      5
+      LANG.TryTranslation("tt2mg_groundhog_epop_desc"),
+      5,
+      nil,
+      true
     )
   end)
 end
