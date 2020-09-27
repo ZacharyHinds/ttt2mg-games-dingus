@@ -44,6 +44,7 @@ if CLIENT then
   MINIGAME.lang = {
     name = {
       English = "Temporal Flux"
+      Русский = "Временной поток"
     },
     desc = {
       English = ""
