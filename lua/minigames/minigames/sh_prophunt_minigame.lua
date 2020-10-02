@@ -11,7 +11,8 @@ if CLIENT then
       English = "Prop Hunt-ish"
     },
     desc = {
-      English = "Everyone can turn into props!"
+      English = "Everyone can turn into props!",
+      Русский = "Каждый может превратиться в объект!"
     }
   }
 end

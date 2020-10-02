@@ -24,10 +24,12 @@ MINIGAME.conVarData = {
 if CLIENT then
   MINIGAME.lang = {
     name = {
-      English = "Amnesia"
+      English = "Amnesia",
+      Русский = "Амнезия"
     },
     desc = {
-      English = "One Detective, One Traitor, One Serialkiller, everyone else is an Amnesiac!"
+      English = "One Detective, One Traitor, One Serialkiller, everyone else is an Amnesiac!",
+      Русский = "Один детектив, один предатель, один серийный убийца, все остальные - больные амнезией!"
     }
   }
 end

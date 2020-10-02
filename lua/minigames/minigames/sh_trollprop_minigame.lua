@@ -18,10 +18,12 @@ MINIGAME.conVarData = {
 if CLIENT then
   MINIGAME.lang = {
     name = {
-      English = "Spectator Prop Buff!"
+      English = "Spectator Prop Buff!",
+      Русский = "Усиление толкометра!"
     },
     desc = {
-      English = "Prop possession is now twice as annoying!"
+      English = "Prop possession is now twice as annoying!",
+      Русский = "Владение объектами теперь вдвое больше раздражает!"
     }
   }
 end

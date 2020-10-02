@@ -24,10 +24,12 @@ MINIGAME.conVarData = {
 if CLIENT then
   MINIGAME.lang = {
     name = {
-      English = "Error Unknown"
+      English = "Error Unknown",
+      Русский = "Ошибка неизвестна"
     },
     desc = {
-      English = "One Detective, One Traitor, everyone else is Unknown!"
+      English = "One Detective, One Traitor, everyone else is Unknown!",
+      Русский = "Один детектив, один предатель, все остальные неизвестны!"
     }
   }
 end
