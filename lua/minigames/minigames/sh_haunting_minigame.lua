@@ -8,11 +8,11 @@ MINIGAME.contact = "Zzzaaaccc13 on TTT2 Discord"
 if CLIENT then
   MINIGAME.lang = {
     name = {
-      English = "There are ghosts around"
+      English = "There are ghosts around",
       Русский = "Вокруг есть призраки"
     },
     desc = {
-      English = "Boredom for noone!"
+      English = "Boredom for noone!",
       Русский = "Скука для никого!"
     }
   }

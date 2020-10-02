@@ -24,11 +24,11 @@ MINIGAME.conVarData = {
 if CLIENT then
   MINIGAME.lang = {
     name = {
-      English = "RESTLESS DEAD!"
+      English = "RESTLESS DEAD!",
       Русский = "БЕСПОКОЙНЫЕ МЁРТВЫЕ!"
     },
     desc = {
-      English = "The dead will return as Restless!"
+      English = "The dead will return as Restless!",
       Русский = "Мёртвые вернутся к жизни беспокойными!"
     }
   }

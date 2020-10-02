@@ -17,11 +17,11 @@ MINIGAME.conVarData = {
 if CLIENT then
   MINIGAME.lang = {
     name = {
-      English = "Anti-Karma"
+      English = "Anti-Karma",
       Русский = "Антикарма"
     },
     desc = {
-      English = "Nice guys finish last..."
+      English = "Nice guys finish last...",
       Русский = "Хорошие парни не выигрывают..."
     }
   }

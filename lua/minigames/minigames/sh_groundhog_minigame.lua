@@ -17,12 +17,12 @@ MINIGAME.conVarData = {
 if CLIENT then
   MINIGAME.lang = {
     name = {
-      English = "Groundhog Day"
+      English = "Groundhog Day",
       Русский = "День сурка"
     },
     desc = {
-      English = "Whew! Watch out for that first step. It's a doozy!"
-      Русский = "Ух! Осторожнее с первым шагом. Это ужасно!"
+      English = "Whew! Watch out for that first step. It's a doozy!",
+      Русский = "Ух! Смотри под ноги, иногда лужи глубокие!"
     }
   }
 else

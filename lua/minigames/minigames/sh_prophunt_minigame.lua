@@ -9,10 +9,9 @@ if CLIENT then
   MINIGAME.lang = {
     name = {
       English = "Prop Hunt-ish"
-      Русский = "Prop Hunt-ish"
     },
     desc = {
-      English = "Everyone can turn into props!"
+      English = "Everyone can turn into props!",
       Русский = "Каждый может превратиться в объект!"
     }
   }
