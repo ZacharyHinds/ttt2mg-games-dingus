@@ -29,5 +29,6 @@ if SERVER then
 
   function MINIGAME:OnDeactivation()
     hook.Remove("GetFallDamage", "BouncingMinigameFall")
+    hook.Remove("EntityTakeDamage", "BouncingMinigameFallDmg")
   end
 end
