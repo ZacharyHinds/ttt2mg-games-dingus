@@ -1,4 +1,4 @@
-L = LANG.GetLanguageTableReference("english")
+L = LANG.GetLanguageTableReference("en")
 
 -- Giveaway
 L["ttt2mg_giveaway_epop"] = "Today's Giveaway is..."
