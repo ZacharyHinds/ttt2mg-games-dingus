@@ -25,9 +25,11 @@ if SERVER then
   end
 
   function MINIGAME:OnDeactivation()
-    engine.LightStyle(0, "m")
-    net.Start("DarkMinigameLightmap")
-    net.Broadcast()
+    timer.Simple(1.5, function()
+      engine.LightStyle(0, "m")
+      net.Start("DarkMinigameLightmap")
+      net.Broadcast()
+    end)
   end
 end
 
