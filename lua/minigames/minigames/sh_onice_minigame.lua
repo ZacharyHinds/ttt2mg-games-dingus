@@ -45,6 +45,8 @@ local ttt2_minigames_onice_nopropdmg = CreateConVar("ttt2_minigames_onice_noprop
   end
 
   function MINIGAME:OnDeactivation()
-    RunConsoleCommand("sv_friction", 8)
+    timer.Simple(0.5, function()
+      RunConsoleCommand("sv_friction", 8)
+    end)
   end
 end
