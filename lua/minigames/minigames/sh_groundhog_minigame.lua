@@ -42,7 +42,7 @@ if SERVER then
           table.remove(plys, rnd)
         until IsValid(ply)
 
-        local spawnpoint = spawn.GetRandomPlayerSpawnEntity(ply)
+        local spawnpoint = plyspawn.GetRandomPlayerSpawnEntity(ply)
         ply:SetPos(spawnpoint:GetPos())
         net.Start("groundhog_popup")
         net.Send(ply)
