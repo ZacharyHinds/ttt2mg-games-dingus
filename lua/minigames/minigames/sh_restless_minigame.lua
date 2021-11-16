@@ -40,6 +40,7 @@ if SERVER then
     ttt2_rst_min_health = GetConVar("ttt2_rst_min_health")
     ttt2_rst_health_multi = GetConVar("ttt2_rst_health_multi")
     hook.Add("TTT2PostPlayerDeath", "RestlessMinigame", function(ply, _, attacker)
+      if SpecDM and (ply.IsGhost and ply:IsGhost()) then return end
       if not IsValid(ply) or attacker:GetSubRole() == ROLE_INFECTED then return end
       if ply:GetSubRole() == ROLE_RESTLESS then return end
 
