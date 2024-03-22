@@ -1,6 +1,5 @@
 SWEP.Base = "weapon_tttbase"
 
-
 SWEP.AdminSpawnable = true
 SWEP.HoldType = "normal"
 SWEP.AmmoEnt = "item_ammo_357_ttt"
@@ -30,7 +29,7 @@ if(CLIENT) then
 end
 
 if SERVER then
-  AddCSLuaFile("shared.lua")
+  AddCSLuaFile()
   resource.AddFile("vgui/ttt/bowicon.png")
 end
 
